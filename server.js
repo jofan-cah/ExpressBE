@@ -10,6 +10,13 @@ const connectDB = require('./config/db');
 // Load environment variables
 dotenv.config();
 
+// Baca variabel dari .env
+const NODE_ENV = process.env.NODE_ENV;
+const URL_DEV = process.env.URL_DEV;
+const URL_PRODUCTION = process.env.URL_PRODUCTION;
+
+const serverUrl = NODE_ENV === 'development' ? URL_DEV : URL_PRODUCTION;
+
 const app = express();
 
 // Middleware
@@ -27,7 +34,7 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: 'http://localhost:5000'
+        url: serverUrl
       }
     ],
     components: {
