@@ -41,18 +41,6 @@ const router = express.Router();
  *           type: string
  *           format: date-time
  *           description: Timestamp of last product update
- *     ProductInput:
- *       type: object
- *       required:
- *         - nama
- *         - qty
- *       properties:
- *         nama:
- *           type: string
- *           description: Name of the product
- *         qty:
- *           type: number
- *           description: Quantity of the product
  */
 
 /**
